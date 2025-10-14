@@ -4,15 +4,15 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { PrismaService } from './prisma/prisma.service';
 import { PrismaModule } from './prisma/prisma.module';
-import { BookModule } from './book/book.module';
+import { AuthService } from './auth/auth.service';
+
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
     PrismaModule,
-    BookModule ,
   ],
   controllers: [AppController],
-  providers: [AppService, PrismaService],
+  providers: [AppService, PrismaService, AuthService],
 })
 export class AppModule {}
