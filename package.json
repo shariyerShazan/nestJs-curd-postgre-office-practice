@@ -1,5 +1,5 @@
 {
-  "name": "office-nest",
+  "name": "nestJs-curd-postgre-office-practice",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -20,16 +20,9 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "-": "^0.0.1",
-    "@nestjs/apollo": "^13.2.1",
     "@nestjs/common": "^11.0.1",
-    "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.0.1",
-    "@nestjs/graphql": "^13.2.0",
     "@nestjs/platform-express": "^11.0.1",
-    "@prisma/client": "^6.17.1",
-    "apollo-server-express": "^3.13.0",
-    "graphql": "^16.11.0",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
   },
@@ -49,7 +42,6 @@
     "globals": "^16.0.0",
     "jest": "^30.0.0",
     "prettier": "^3.4.2",
-    "prisma": "^6.17.1",
     "source-map-support": "^0.5.21",
     "supertest": "^7.0.0",
     "ts-jest": "^29.2.5",
