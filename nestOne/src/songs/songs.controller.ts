@@ -1,5 +1,14 @@
 import { SongsService } from './songs.service';
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  HttpException,
+  HttpStatus,
+  Param,
+  ParseIntPipe,
+  Post,
+} from '@nestjs/common';
 
 @Controller('songs')
 export class SongsController {
@@ -9,13 +18,27 @@ export class SongsController {
     return this.songsService.createSong(name);
   }
 
+  @Get('error')
+  error() {
+    throw new HttpException(
+      'internal server error',
+      HttpStatus.INTERNAL_SERVER_ERROR,
+    );
+  } //! getting server error
+
   @Get()
   getSongs() {
     return this.songsService.findSongs();
   }
 
   @Get(':id')
-  getSongById(@Param('id') id: string) {
-    return this.songsService.findSongById(Number(id));
+  getSongById(
+    @Param(
+      'id',
+      new ParseIntPipe({ errorHttpStatusCode: HttpStatus.NOT_ACCEPTABLE }),
+    )
+    id: number,
+  ) {
+    return this.songsService.findSongById(id);
   }
 }
