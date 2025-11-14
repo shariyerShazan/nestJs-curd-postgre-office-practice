@@ -9,7 +9,7 @@ async function bootstrap() {
     .setTitle('My nest app')
     .setDescription('Api description')
     .setVersion('1.0')
-    .addTag('tasks')
+    .addTag('task api')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
